@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta https-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <aside class="topbar">
+        <h2 class="title">To Do List</h2>
+        <div class="ID">
+            <h3 id="openLogin">Sign In</h3>
+            <h3> | </h3>
+            <h3 id="openSignup">Sign Up</h3>
+        </div>
+    </aside>
+    <div class="AddandDelete">
+        <input type="text" id="ToDoText" placeholder="할 일을 입력하세요." required>
+        <div class="AddButton">
+            <button id="AddToDoListButton" onclick="PlusToDoList()">추가</button>
+            <span class="tooltip-text">할 일이 추가됩니다.(Enter)</span>
+        </div>
+        <div class="DeleteAll">
+            <button id="DeleteAllButton" onclick="DeleteAllItem()">모두 삭제</button>
+            <span class="tooltip-text">모든 할 일을 삭제합니다.(CTRL+Shift+BackSpace)</span>
+        </div>
+    </div>
+
+    <!-- 할 일 카드들이 추가될 영역 -->
+    <div id="todoList"></div>
+
+
+
+    <!-- 로그인 모달 배경-->
+    <div id="loginModal" class="modal hidden">
+
+        <!-- 모달 배경 클릭 영역 -->
+        <div class="modal-overlay"></div>
+
+        <!-- 모달 박스 -->
+        <div class="modal-content">
+
+            <!-- 닫기 버튼 -->
+            <button class="close-btn" id="closeLoginModal">✖</button>
+
+            <h2>로그인</h2>
+
+            <!-- 로그인 폼 -->
+            <div class="form-group">
+                <input
+                    type="text"
+                    id="loginId"
+                    placeholder="아이디"
+                />
+            </div>
+
+            <div class="form-group">
+                <input
+                    type="password"
+                    id="loginPw"
+                    placeholder="비밀번호"
+                />
+            </div>
+
+            <button id="loginBtn">로그인</button>
+
+            <p class="switch-text">
+                아직 계정이 없나요?
+                <span id="openSignup">회원가입</span>
+            </p>
+
+        </div>
+    </div>
+    <!-- 회원가입 모달 -->
+    <div id="signupModal" class="modal hidden">
+
+        <div class="modal-overlay"></div>
+
+        <div class="modal-content">
+            <button class="close-btn" id="closeSignupModal">✖</button>
+
+            <h2>회원가입</h2>
+
+            <div class="form-group">
+                <input
+                    type="text"
+                    id="signupId"
+                    placeholder="아이디"
+                />
+            </div>
+
+            <div class="form-group">
+                <input
+                    type="password"
+                    id="signupPw"
+                    placeholder="비밀번호"
+                />
+            </div>
+
+            <div class="form-group">
+                <input
+                    type="password"
+                    id="signupPwConfirm"
+                    placeholder="비밀번호 확인"
+                />
+            </div>
+
+            <button id="signupBtn">회원가입</button>
+
+            <p class="switch-text">
+                이미 계정이 있나요?
+                <span id="goLogin">로그인</span>
+            </p>
+        </div>
+    </div>
+
+
+
+    <script src="main.js"></script>
+</body>
+</html>
