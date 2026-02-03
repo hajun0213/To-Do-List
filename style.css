@@ -38,9 +38,9 @@ body {
   cursor: pointer;
 } 
 
-#todoList {
+/* #todoList {
   margin-top: 20px;
-}
+} */
 
 .todo-item {
     display: flex;
@@ -49,10 +49,17 @@ body {
 
     background: rgba(255, 255, 255, 0.9);
     padding: 12px 16px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    border-radius: 16px;
+    /* margin-bottom: 20px; */
     width: 280px;
     height: 50px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.todo-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
 }
 
 .todo-item span {
@@ -72,12 +79,12 @@ body {
     width: 100%;
 }
 
-#todoList {
+/* #todoList {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap; /* 아이템들이 한 줄에 못 들어올 때, 다음 줄로 내려가게 하는 속성 */
-    padding: 2vw;
-}
+    /* flex-wrap: wrap;  아이템들이 한 줄에 못 들어올 때, 다음 줄로 내려가게 하는 속성 */
+    /* padding: 2vw;
+} */
 
 #ToDoText {
     text-align: center;
@@ -94,6 +101,7 @@ body {
     border-radius: 5px;
     margin-left: 6px;
     background-color: rgb(10, 225, 10);
+    
 }
 
 #AddToDoListButton:hover {
@@ -145,8 +153,8 @@ body {
 
 div.todo-item {
     display: flex;
-    margin-left: 2vw;
-    margin-right: 2vw;
+    /* margin-left: 2vw; */
+    /* margin-right: 2vw; */
 }
 
 .AddButton,
@@ -156,8 +164,8 @@ div.todo-item {
 
 .delete-btn {
     background: transparent;
-    width: 1.1vw;
-    height: 1.1vw;
+    width: 18px;
+    height: 18px;
     border: none;
     font-size: 16px;
     cursor: pointer;
@@ -292,6 +300,54 @@ div.todo-item {
 input[type="checkbox"] {
     margin-right: 5px;
 }
+
+.todo-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#todoList {
+    margin-top: 20px;
+
+    display: grid;
+    grid-template-columns: repeat(5, 280px);
+    gap: 48px;
+    /* max-width: 1400px; */
+
+    max-width: calc(5 * 280px + 4 * 60px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.todo-item.completed {
+    opacity: 0.6;
+    text-decoration: line-through;
+    background: #f5f5f5;
+}
+
+#emptyMessage {
+    text-align: center;
+    color: #999;
+    font-size: 18px;
+    margin-top: 80px;
+}
+/* button {
+    border-radius: 10px;
+    padding: 8px 14px;
+    background: #4f46e5;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background: #4338ca;
+}
+button:active {
+    transform: scale(0.95);
+} */
 
 /* 애니메이션 */ 
 @keyframes modalFadeIn {
